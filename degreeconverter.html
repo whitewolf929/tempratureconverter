@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Celsius/Fahrenheit Converter </title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #92dddc;
+		}
+		.container {
+			margin: auto;
+			width: 80%;
+			padding: 50px;
+			background-color: rgb(56, 151, 180);
+			border: 5px solid #050505;
+			border-radius: 18px;
+			box-shadow: 0 30px 6px rgba(107, 118, 119, 0.3);
+		}
+		h1 {
+			text-align: center;
+			margin-top: 3;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 40px;
+		}
+		label {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		input[type="number"] {
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 8px;
+			border: none;
+			box-shadow: 0 10px 5px rgba(247, 249, 250, 0.3);
+		}
+		button {
+			margin-top: 10px;
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: none;
+			background-color: #ceb12e;
+			color: rgb(18, 17, 17);
+			box-shadow: 0 8px 8px rgba(253, 250, 250, 0.3);
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #ececf4;
+		}
+		.result {
+			margin-top: 30px;
+			font-size: 25px;
+			font-weight: bold;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1><h1><u>Celsius/Fahrenheit Converter</u></h1></h1>
+		<form>
+			<h2><label>Enter temperature in Celsius:</label></h2>
+			<input type="number" id="celsius">
+			<h4><button type="button" onclick="convertToFar()">Convert to Fahrenheit</button></h4>
+			<h2><label>Enter temperature in Fahrenheit:</label></h2>
+			<input type="number" id="fahrenheit">
+			<h4><button type="button" onclick="convertToCel()">Convert to Celsius</button></h4>
+		</form>
+		<div class="result" id="result"></div>
+	</div>
+
+	<script>
+		function convertToFar() {
+			var celsius = document.getElementById("celsius").value;
+			var fahrenheit = (celsius * 9/5) + 32;
+			document.getElementById("result").innerHTML = celsius + " degrees Celsius is equal to " + fahrenheit + " degrees Fahrenheit.";
+		}
+
+		function convertToCel() {
+			var fahrenheit = document.getElementById("fahrenheit").value;
+			var celsius = (fahrenheit - 32) * 5/9;
+			document.getElementById("result").innerHTML = fahrenheit + " degrees Fahrenheit is equal to " + celsius + " degrees Celsius.";
+		}
+	</script>
+</body>
+</html>
